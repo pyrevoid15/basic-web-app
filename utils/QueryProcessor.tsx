@@ -32,7 +32,7 @@ export default function QueryProcessor(query: string): string {
   else if (query.toLowerCase().includes("multiplied by")) {
     let q = query.split(" ");
 
-    let plus = q.toLowerCase().indexOf("by");
+    let plus = q.indexOf("by");
     let num1 = Number(q[plus - 1]);
 
     let num2s = q[plus + 1]
@@ -45,7 +45,7 @@ export default function QueryProcessor(query: string): string {
   else if (query.toLowerCase().includes("to the power of")) {
     let q = query.split(" ");
 
-    let to = q.toLowerCase().indexOf("to");
+    let to = q.indexOf("to");
     let num1 = Number(q[to - 1]);
 
     let num2s = q[to + 4]
@@ -58,7 +58,7 @@ export default function QueryProcessor(query: string): string {
   else if (query.toLowerCase().includes("minus")) {
     let q = query.split(" ");
 
-    let plus = q.toLowerCase().indexOf("to");
+    let plus = q.indexOf("to");
     let num1 = Number(q[plus - 1]);
 
     let num2s = q[plus + 1]
