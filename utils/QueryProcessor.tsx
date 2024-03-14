@@ -16,6 +16,15 @@ export default function QueryProcessor(query: string): string {
       "wcrensha"
     );
   }
+  else if (query.toLowerCase().includes("plus")) {
+    let plus = query.toLowerCase().indexOf("plus");
+    let num1 = Number(query[plus - 1]);
+    let num2 = Number(query[plus + 1]);
+
+    return (
+      String(num1 + num2)
+    );
+  }
 
   return "";
 }
