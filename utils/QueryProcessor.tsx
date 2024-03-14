@@ -17,7 +17,7 @@ export default function QueryProcessor(query: string): string {
     );
   }
   else if (query.toLowerCase().includes("plus")) {
-    let q = query.split("");
+    let q = query.split(" ");
 
     let plus = q.indexOf("plus");
     let num1 = Number(q[plus - 1]);
