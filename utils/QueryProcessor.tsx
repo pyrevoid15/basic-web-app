@@ -27,6 +27,17 @@ export default function QueryProcessor(query: string): string {
       String(num1 + num2)
     );
   }
+  else if (query.toLowerCase().includes("multiplied by")) {
+    let plus = query.toLowerCase().indexOf("by");
+    let num1 = Number(query[plus - 1]);
+
+    let num2s = query[plus + 1]
+    let num2 = Number(num2s.replace("?", ""));
+
+    return (
+      String(num1 * num2)
+    );
+  }
 
   return "";
 }
