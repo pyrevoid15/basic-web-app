@@ -38,6 +38,16 @@ export default function QueryProcessor(query: string): string {
       String(num1 * num2)
     );
   }
+  else if (query.toLowerCase().includes("largest")) {
+    let list = query.split(":")[1].split(",");
+    list[2] = list[2].replace("?", "");
+
+    let iList = list.flatMap(x => Number(x));
+
+    return (
+      String(Math.max(...iList))
+    );
+  }
 
   return "";
 }
