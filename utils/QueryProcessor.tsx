@@ -17,10 +17,12 @@ export default function QueryProcessor(query: string): string {
     );
   }
   else if (query.toLowerCase().includes("plus")) {
-    let plus = query.toLowerCase().indexOf("plus");
-    let num1 = Number(query[plus - 1]);
+    let q = query.split("");
 
-    let num2s = query[plus + 1]
+    let plus = q.indexOf("plus");
+    let num1 = Number(q[plus]);
+
+    let num2s = q[plus + 1]
     let num2 = Number(num2s.replace("?", ""));
 
     return (
@@ -28,11 +30,13 @@ export default function QueryProcessor(query: string): string {
     );
   }
   else if (query.toLowerCase().includes("multiplied by")) {
-    let plus = query.toLowerCase().indexOf("by");
-    let num1 = Number(query[plus - 1]);
+    let q = query.split("");
 
-    let num2s = query[plus + 1]
-    let num2 = Number(num2s.replace("?", ""));
+    let plus = q.toLowerCase().indexOf("by");
+    let num1 = Number(q[plus - 1]);
+
+    let num2s = q[plus + 1]
+    let num2 = Number(q.replace("?", ""));
 
     return (
       String(num1 * num2)
