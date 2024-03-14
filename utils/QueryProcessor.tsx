@@ -78,6 +78,28 @@ export default function QueryProcessor(query: string): string {
       String(Math.max(...iList))
     );
   }
+  else if (query.toLowerCase().includes("primes")) {
+    let list = query.split(":")[1].split(",");
+    list[2] = list[2].replace("?", "");
+
+    let iList = list.flatMap(x => Number(x));
+    
+    let v = iList[0];
+    for (let i = 0; i < iList.length; i += 1) {
+      let x = iList[i];
+      let lim = Math.sqrt(x);
+      
+      for (let j = 0; j < lim; j += 1) {
+        if (Math.ceil(x / j) == x / j) {
+          v = x;
+        }
+      }
+    }
+
+    return (
+      String(v)
+    );
+  }
 
   return "";
 }
