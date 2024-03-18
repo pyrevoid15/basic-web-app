@@ -36,7 +36,7 @@ export default function QueryProcessor(query: string): string {
     let num1 = Number(q[plus - 1]);
 
     let num2s = q[plus + 1]
-    let num2 = Number(q.replace("?", ""));
+    let num2 = Number(num2s.replace("?", ""));
 
     return (
       String(num1 * num2)
@@ -49,7 +49,7 @@ export default function QueryProcessor(query: string): string {
     let num1 = Number(q[to - 1]);
 
     let num2s = q[to + 4]
-    let num2 = Number(q.replace("?", ""));
+    let num2 = Number(num2s.replace("?", ""));
 
     return (
       String(num1 ** num2)
@@ -62,7 +62,7 @@ export default function QueryProcessor(query: string): string {
     let num1 = Number(q[plus - 1]);
 
     let num2s = q[plus + 1]
-    let num2 = Number(q.replace("?", ""));
+    let num2 = Number(num2s.replace("?", ""));
 
     return (
       String(num1 - num2)
