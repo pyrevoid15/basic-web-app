@@ -13,7 +13,7 @@ export default function QueryProcessor(query: string): string {
   }
   else if (query.toLowerCase().includes("name")) {
     return (
-      "wcrensha"
+      "wcrensha."
     );
   }
   else if (query.toLowerCase().includes("plus")) {
@@ -33,7 +33,7 @@ export default function QueryProcessor(query: string): string {
     let q = query.split(" ");
 
     let plus = q.indexOf("by");
-    let num1 = Number(q[plus - 1]);
+    let num1 = Number(q[plus - 2]);
 
     let num2s = q[plus + 1]
     let num2 = Number(num2s.replace("?", ""));
@@ -58,7 +58,7 @@ export default function QueryProcessor(query: string): string {
   else if (query.toLowerCase().includes("minus")) {
     let q = query.split(" ");
 
-    let plus = q.indexOf("to");
+    let plus = q.indexOf("minus");
     let num1 = Number(q[plus - 1]);
 
     let num2s = q[plus + 1]
@@ -100,6 +100,7 @@ export default function QueryProcessor(query: string): string {
       String(v)
     );
   }
+  
 
   return "";
 }
